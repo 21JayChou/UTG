@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directed Graph Visualization</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+        #graph-container {
+            width: 50%;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ccc;
+            position: relative;
+        }
+        #details-container {
+            width: 50%;
+            padding: 20px;
+            background-color: #ffffff;
+            overflow-y: auto;
+        }
+        .view-image{
+            width:auto;
+            height:50px;
+        }
+        .state-image, .edge-image {
+            width: 250px;
+            height: 500px;
+            margin: 10px 0;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .edge {
+            fill: none;
+            stroke: #000000;
+            stroke-opacity: 0.8;
+            stroke-width: 4px;
+            marker-end: url(#arrow);
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="graph-container">
+            <div id="controls">
+        <div>
+            <label for="package-select">Select Package:</label>
+            <select id="package-select">
+                <option value="">--Select Package--</option>
+                <!-- Add options for packages dynamically -->
+            </select>
+        </div>
+        <div>
+            <label for="file-select">Select JSON File:</label>
+            <select id="file-select" disabled>
+                <option value="">--Select File--</option>
+                <!-- Add options for files dynamically -->
+            </select>
+        </div>
+    </div>
+    </div>
+    <div id="details-container">
+        <h3>Details</h3>
+        <div id="node-details" style="display: none;">
+            <p><strong>State ID:</strong> <span id="state-id"></span></p>
+            <p><strong>Package:</strong> <span id="state-package"></span></p>
+            <p><strong>Activity:</strong> <span id="state-activity"></span></p>
+            <p><strong>Description:</strong> <span id="state-description"></span></p>
+            <img id="state-image" class="state-image" src="" alt="Node Image">
+        </div>
+        <div id="edge-details" style="display: none;">
+            <p><strong>Edge ID:</strong> <span id="edge-id"></span></p>
+            <p><strong>Type:</strong> <span id="edge-type"></span></p>
+            <p><strong>View Image:</strong> <img id="view-image" class="view-image" src="" alt="View Image"></p>
+            <div style="display: flex; align-items: center;">
+                <img id="edge-from-image" class="edge-image" src="" alt="From Node Image">
+                <span style="margin: 0 10px; font-weight: bold;">TO</span> <!-- "TO" 在两张图片的中间 -->
+                <img id="edge-to-image" class="edge-image" src="" alt="To Node Image">
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const svgWidth = 600;
+        const svgHeight = 600;
+        const packages = {
+            "com.tencent.mm": ["data/com.tencent.mm/utg.json"]
+            // Add more packages and their corresponding files here
+        };
+        // Populate package select options
+        const packageSelect = document.getElementById("package-select");
+        const fileSelect = document.getElementById("file-select");
+
+        for (const pkg in packages) {
+            const option = document.createElement("option");
+            option.value = pkg;
+            option.textContent = pkg;
+            packageSelect.appendChild(option);
+        }
+
+        // Event listener for package selection
+        packageSelect.addEventListener("change", () => {
+            fileSelect.innerHTML = '<option value="">--Select File--</option>'; // Reset file select
+            if (packageSelect.value) {
+                packages[packageSelect.value].forEach(file => {
+                    const option = document.createElement("option");
+                    option.value = file;
+                    option.textContent = file;
+                    fileSelect.appendChild(option);
+                });
+                fileSelect.disabled = false;
+            } else {
+                fileSelect.disabled = true;
+            }
+        });
+
+        // Event listener for file selection
+        fileSelect.addEventListener("change", () => {
+            if (fileSelect.value) {
+                loadGraphData(fileSelect.value);
+            }
+        });
+        function loadGraphData(fileName) {
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    // 在这里使用data对象
+                    const svg = d3.select("#graph-container")
+                        .append("svg")
+                        .attr("width", "100%")
+                        .attr("height", "100%")
+                        .call(d3.zoom().scaleExtent([0.5, 2]).on("zoom", (event) => {
+                            svg.attr("transform", event.transform);
+                        }))
+                        .append("g");
+
+                    // Define marker for directed edgesew
+                    svg.append("defs").append("marker")
+                        .attr("id", "arrow")
+                        .attr("viewBox", "0 -5 10 10")
+                        .attr("refX", 30)
+                        .attr("refY", 0)
+                        .attr("markerWidth", 6)
+                        .attr("markerHeight", 6)
+                        .attr("orient", "auto")
+                        .append("path")
+                        .attr("d", "M0,-5L10,0L0,5")
+                        .attr("fill", "#666");
+                    nodes = data.nodes
+                    edges = data.edges
+                    edges.forEach(edge => {
+                        edge.source = edge.from
+                        edge.target = edge.to
+                        delete edge.from
+                        delete edge.to
+                    });
+
+                    const simulation = d3.forceSimulation(nodes)
+                        .force("link", d3.forceLink(edges).id(d => d.id).distance(200))
+                        .force("charge", d3.forceManyBody().strength(-1000))
+                        .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2))
+                        .force("x", d3.forceX(svgWidth / 2).strength(0.1))
+                        .force("y", d3.forceY(svgHeight / 2).strength(0.1));
+
+                    // Draw edges
+                    const link = svg.append("g")
+                        .selectAll("line")
+                        .data(edges)
+                        .enter().append("line")
+                        .attr("class", "edge")
+                        .attr("marker-end", "url(#arrow)")
+                        .attr("stroke-width", 4)
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y)
+                        .attr("transform", function (d) {
+                            // Check if there's a reverse edge and apply an offset
+                            const reverseEdge = edges.find(e => e.source === d.target && e.target === d.source);
+                            if (reverseEdge) {
+                                return `translate(0, ${d.index % 2 === 0 ? -15 : 15})`;
+                            }
+                            return "";
+                        })
+                        .on("click", (event, d) => showEdgeDetails(d));
+
+                    // Draw nodes
+                    const node = svg.append("g")
+                        .selectAll("image")
+                        .data(nodes)
+                        .enter().append("image")
+                        .attr("xlink:href", d => d.image)
+                        .attr("width", 100)
+                        .attr("height", 100)
+                        .attr("class", "node")
+                        .on("click", (event, d) => showNodeDetails(d))
+                        .call(drag(simulation));
+
+                    // Add labels to nodes
+                    const label = svg.append("g")
+                        .selectAll("text")
+                        .data(nodes)
+                        .enter().append("text")
+                        .attr("dy", 5)
+                        .attr("font-size", "14px")
+                        .attr("text-anchor", "middle")
+                        .text(d => d.label);
+
+                    // Simulation tick
+                    simulation.on("tick", () => {
+                        link.attr("x1", d => d.source.x)
+                            .attr("y1", d => d.source.y)
+                            .attr("x2", d => d.target.x)
+                            .attr("y2", d => d.target.y);
+
+                        node.attr("x", d => d.x - 25)
+                            .attr("y", d => d.y - 25);
+
+                        label.attr("x", d => d.x)
+                            .attr("y", d => d.y + 35);
+                    });
+
+                    function drag(simulation) {
+                        return d3.drag()
+                            .on("start", (event, d) => {
+                                if (!event.active) simulation.alphaTarget(0.3).restart();
+                                d.fx = d.x;
+                                d.fy = d.y;
+                            })
+                            .on("drag", (event, d) => {
+                                d.fx = event.x;
+                                d.fy = event.y;
+                            })
+                            .on("end", (event, d) => {
+                                if (!event.active) simulation.alphaTarget(0);
+                                d.fx = null;
+                                d.fy = null;
+                            });
+                    }
+
+                    function showNodeDetails(d) {
+                        document.getElementById("node-details").style.display = "block";
+                        document.getElementById("edge-details").style.display = "none";
+                        document.getElementById("state-id").textContent = d.id;
+                        document.getElementById("state-description").textContent = d.description;
+                        document.getElementById("state-package").textContent = d.package;
+                        document.getElementById("state-activity").textContent = d.activity;
+                        document.getElementById("state-image").src = d.image;
+                    }
+
+                    function showEdgeDetails(d) {
+                        document.getElementById("node-details").style.display = "none";
+                        document.getElementById("edge-details").style.display = "block";
+                        document.getElementById("edge-id").textContent = d.label;
+                        document.getElementById("edge-type").textContent = d.events[0].event_type
+                        document.getElementById("view-image").src = d.events[0].view_image
+                        document.getElementById("edge-from-image").src = nodes.find(node => node.id === d.source.id).image;
+                        document.getElementById("edge-to-image").src = nodes.find(node => node.id === d.target.id).image;
+                    }
+
+                    // });
+                })
+        }
+    </script>
+</body>

@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130315.png",
+      "label": "LauncherUI\n<FIRST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "description": "This is the launcher UI for WeChat app. The screen displays various options and functionalities of the app, including sending and receiving messages, adding contacts, and accessing different features.",
+      "font": "14px Arial red"
+    },
+    {
+      "id": "ad48a1a578db0719745dbccf027041bb",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130349.png",
+      "label": "LauncherUI",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "ad48a1a578db0719745dbccf027041bb",
+      "description": "This is the launcher UI screen in WeChat app, with options to search and access more functions."
+    },
+    {
+      "id": "063896f143d6834f8e2abb29fdf61dcc",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130405.png",
+      "label": "LauncherUI",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "063896f143d6834f8e2abb29fdf61dcc",
+      "description": "This is the launcher UI screen in WeChat app, with options for search and more functions."
+    },
+    {
+      "id": "4c6cbbb64e3c1afe0522b4e0e8a3dddd",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130421.png",
+      "label": "ChatroomContactUI",
+      "package": "com.tencent.mm",
+      "activity": ".ui.contact.ChatroomContactUI",
+      "state_str": "4c6cbbb64e3c1afe0522b4e0e8a3dddd",
+      "description": "This is the chatroom contact page in WeChat, where users can view and interact with their chat contacts."
+    },
+    {
+      "id": "2173b44aa3e0740b1125c0bd4640eafc",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130438.png",
+      "label": "ChattingUI\n<LAST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.chatting.ChattingUI",
+      "state_str": "2173b44aa3e0740b1125c0bd4640eafc",
+      "description": "This is the chatting UI in WeChat app, where users can send messages, share photos, and access additional features like emojis and more.",
+      "font": "14px Arial red"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "to": "ad48a1a578db0719745dbccf027041bb",
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185-->ad48a1a578db0719745dbccf027041bb",
+      "label": "1",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=e1b1c0f7f171ce4e01f087d2733a1185, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 1,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "ad48a1a578db0719745dbccf027041bb",
+      "to": "063896f143d6834f8e2abb29fdf61dcc",
+      "id": "ad48a1a578db0719745dbccf027041bb-->063896f143d6834f8e2abb29fdf61dcc",
+      "label": "2",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=ad48a1a578db0719745dbccf027041bb, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 2,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "063896f143d6834f8e2abb29fdf61dcc",
+      "to": "4c6cbbb64e3c1afe0522b4e0e8a3dddd",
+      "id": "063896f143d6834f8e2abb29fdf61dcc-->4c6cbbb64e3c1afe0522b4e0e8a3dddd",
+      "label": "3",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=063896f143d6834f8e2abb29fdf61dcc, view=792bc86a109de4ecf8dc4cd5bb6b7f31(.ui.LauncherUI/LinearLayout-))",
+          "event_id": 3,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_792bc86a109de4ecf8dc4cd5bb6b7f31.png"
+        }
+      ]
+    },
+    {
+      "from": "4c6cbbb64e3c1afe0522b4e0e8a3dddd",
+      "to": "2173b44aa3e0740b1125c0bd4640eafc",
+      "id": "4c6cbbb64e3c1afe0522b4e0e8a3dddd-->2173b44aa3e0740b1125c0bd4640eafc",
+      "label": "4",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=4c6cbbb64e3c1afe0522b4e0e8a3dddd, view=94835d3cdcf5ee5a8da21a6dfc1b444d(.ui.contact.ChatroomContactUI/LinearLayout-))",
+          "event_id": 4,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_94835d3cdcf5ee5a8da21a6dfc1b444d.png"
+        }
+      ]
+    }
+  ],
+  "num_nodes": 5,
+  "num_edges": 4,
+  "num_effective_events": 4,
+  "num_reached_activities": 0,
+  "test_date": "2024-11-08 13:03:15",
+  "num_transitions": 5
+}

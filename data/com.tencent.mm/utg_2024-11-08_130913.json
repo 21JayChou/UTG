@@ -1,0 +1,210 @@
+{
+  "nodes": [
+    {
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130923.png",
+      "label": "LauncherUI\n<FIRST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "description": "This is the launcher UI of the WeChat app, with various options and functionalities available on the screen for the user.",
+      "font": "14px Arial red"
+    },
+    {
+      "id": "60826e66fe512bc817f602999593d30c",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130944.png",
+      "label": "LauncherUI\n<LAST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "60826e66fe512bc817f602999593d30c",
+      "description": "This is the launcher UI screen of the WeChat app, with options for search and more features.",
+      "font": "14px Arial red"
+    },
+    {
+      "id": "86e54081fbd77945acacaf38b9741dca",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_131016.png",
+      "label": "FTSMainUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.fts.ui.FTSMainUI",
+      "state_str": "86e54081fbd77945acacaf38b9741dca",
+      "description": "This is the search page in WeChat, where users can search for friends, public accounts, mini programs, and videos. There are options to search using text or voice, as well as buttons to search within specific categories like Moments, Official Accounts, Mini Programs, and Video Accounts. Additionally, there are buttons to expand search results and delete search history."
+    },
+    {
+      "id": "8621e0cacc91b8f775c6518872e3114f",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_131031.png",
+      "label": "MMFTSSOSHomeWebViewUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.webview.ui.tools.fts.MMFTSSOSHomeWebViewUI",
+      "state_str": "8621e0cacc91b8f775c6518872e3114f",
+      "description": "This is a screen in the WeChat app, specifically the public account search page. Users can search for public accounts using the search bar and search button."
+    },
+    {
+      "id": "627e2c99ea88bccc8122fee7c8a77c53",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_131135.png",
+      "label": "FTSMainUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.fts.ui.FTSMainUI",
+      "state_str": "627e2c99ea88bccc8122fee7c8a77c53",
+      "description": "This is the search page in WeChat app, where users can search for different categories such as friends, public accounts, mini programs, and videos. Users can also search for specific services or businesses within the app."
+    },
+    {
+      "id": "d18e5080cbaad02a642822ed97941f7e",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_131152.png",
+      "label": "FTSMainUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.fts.ui.FTSMainUI",
+      "state_str": "d18e5080cbaad02a642822ed97941f7e",
+      "description": "This is the search page in WeChat app, where users can search for various content or contacts within the app. The page includes buttons for different categories such as Moments, Official Accounts, Mini Programs, and Videos. Users can also clear the search history or complete the search."
+    },
+    {
+      "id": "9ad467897364c94d2963b7d77ebd3869",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_131225.png",
+      "label": "LiteAppGameTabUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.game.ui.LiteAppGameTabUI",
+      "state_str": "9ad467897364c94d2963b7d77ebd3869",
+      "description": "This is the LiteAppGameTabUI screen in the WeChat app, showcasing various games and activities available for users to explore and participate in. It includes options to download games, view promotions, and engage with different game-related content."
+    }
+  ],
+  "edges": [
+    {
+      "from": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "to": "60826e66fe512bc817f602999593d30c",
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185-->60826e66fe512bc817f602999593d30c",
+      "label": "1",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=e1b1c0f7f171ce4e01f087d2733a1185, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 1,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "60826e66fe512bc817f602999593d30c",
+      "to": "86e54081fbd77945acacaf38b9741dca",
+      "id": "60826e66fe512bc817f602999593d30c-->86e54081fbd77945acacaf38b9741dca",
+      "label": "2",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=60826e66fe512bc817f602999593d30c, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 2,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "60826e66fe512bc817f602999593d30c",
+      "to": "9ad467897364c94d2963b7d77ebd3869",
+      "id": "60826e66fe512bc817f602999593d30c-->9ad467897364c94d2963b7d77ebd3869",
+      "label": "8",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=60826e66fe512bc817f602999593d30c, view=792bc86a109de4ecf8dc4cd5bb6b7f31(.ui.LauncherUI/LinearLayout-))",
+          "event_id": 8,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_792bc86a109de4ecf8dc4cd5bb6b7f31.png"
+        }
+      ]
+    },
+    {
+      "from": "86e54081fbd77945acacaf38b9741dca",
+      "to": "8621e0cacc91b8f775c6518872e3114f",
+      "id": "86e54081fbd77945acacaf38b9741dca-->8621e0cacc91b8f775c6518872e3114f",
+      "label": "3",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=86e54081fbd77945acacaf38b9741dca, view=349cfa0420e0843cbfd400b67af739a9(.plugin.fts.ui.FTSMainUI/Button-\u516c\u4f17\u53f7))",
+          "event_id": 3,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_349cfa0420e0843cbfd400b67af739a9.png"
+        }
+      ]
+    },
+    {
+      "from": "86e54081fbd77945acacaf38b9741dca",
+      "to": "627e2c99ea88bccc8122fee7c8a77c53",
+      "id": "86e54081fbd77945acacaf38b9741dca-->627e2c99ea88bccc8122fee7c8a77c53",
+      "label": "5",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=86e54081fbd77945acacaf38b9741dca, view=cfbc9f4304d11d19a90ee527f164b070(.plugin.fts.ui.FTSMainUI/Button-\u5220\u9664\u5386\u53f2\u641c\u7d22\u8bcd))",
+          "event_id": 5,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_cfbc9f4304d11d19a90ee527f164b070.png"
+        }
+      ]
+    },
+    {
+      "from": "8621e0cacc91b8f775c6518872e3114f",
+      "to": "86e54081fbd77945acacaf38b9741dca",
+      "id": "8621e0cacc91b8f775c6518872e3114f-->86e54081fbd77945acacaf38b9741dca",
+      "label": "4",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=8621e0cacc91b8f775c6518872e3114f, view=41cedd35f5edb4f8df8ac205b100e50b(.plugin.webview.ui.tools.fts.MMFTSSOSHomeWebViewUI/View-))",
+          "event_id": 4,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_41cedd35f5edb4f8df8ac205b100e50b.png"
+        }
+      ]
+    },
+    {
+      "from": "627e2c99ea88bccc8122fee7c8a77c53",
+      "to": "d18e5080cbaad02a642822ed97941f7e",
+      "id": "627e2c99ea88bccc8122fee7c8a77c53-->d18e5080cbaad02a642822ed97941f7e",
+      "label": "6",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=627e2c99ea88bccc8122fee7c8a77c53, view=96c61c8fe4696ea6e5303f495c5e7e61(.plugin.fts.ui.FTSMainUI/View-))",
+          "event_id": 6,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_96c61c8fe4696ea6e5303f495c5e7e61.png"
+        }
+      ]
+    },
+    {
+      "from": "d18e5080cbaad02a642822ed97941f7e",
+      "to": "60826e66fe512bc817f602999593d30c",
+      "id": "d18e5080cbaad02a642822ed97941f7e-->60826e66fe512bc817f602999593d30c",
+      "label": "7",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=d18e5080cbaad02a642822ed97941f7e, view=b51b26194ec7b98d6aa9ba8cfad52c91(.plugin.fts.ui.FTSMainUI/TextView-\u53d6\u6d88))",
+          "event_id": 7,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_b51b26194ec7b98d6aa9ba8cfad52c91.png"
+        }
+      ]
+    },
+    {
+      "from": "9ad467897364c94d2963b7d77ebd3869",
+      "to": "60826e66fe512bc817f602999593d30c",
+      "id": "9ad467897364c94d2963b7d77ebd3869-->60826e66fe512bc817f602999593d30c",
+      "label": "9",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=9ad467897364c94d2963b7d77ebd3869, view=37278865de0fc0084f2f35fb581b5a5c(.plugin.game.ui.LiteAppGameTabUI/ImageView-))",
+          "event_id": 9,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_37278865de0fc0084f2f35fb581b5a5c.png"
+        }
+      ]
+    }
+  ],
+  "num_nodes": 7,
+  "num_edges": 9,
+  "num_effective_events": 9,
+  "num_reached_activities": 0,
+  "test_date": "2024-11-08 13:09:13",
+  "num_transitions": 13
+}

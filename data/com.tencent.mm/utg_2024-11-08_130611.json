@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130621.png",
+      "label": "LauncherUI\n<FIRST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "description": "This is the launcher screen for WeChat app, with options to send and receive messages. It also displays information about contacts and recent conversations.",
+      "font": "14px Arial red"
+    },
+    {
+      "id": "063896f143d6834f8e2abb29fdf61dcc",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130637.png",
+      "label": "LauncherUI\n<LAST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "063896f143d6834f8e2abb29fdf61dcc",
+      "description": "This is the launcher screen of WeChat, with options for searching and accessing more functions.",
+      "font": "14px Arial red"
+    },
+    {
+      "id": "88aadd3263ed6e38c89266137fd6f6d4",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_130653.png",
+      "label": "EnterpriseBizContactListUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.brandservice.ui.EnterpriseBizContactListUI",
+      "state_str": "88aadd3263ed6e38c89266137fd6f6d4",
+      "description": "This is the Enterprise Biz Contact List UI in WeChat, where users can view and interact with their business contacts."
+    }
+  ],
+  "edges": [
+    {
+      "from": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "to": "063896f143d6834f8e2abb29fdf61dcc",
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185-->063896f143d6834f8e2abb29fdf61dcc",
+      "label": "1",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=e1b1c0f7f171ce4e01f087d2733a1185, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 1,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "063896f143d6834f8e2abb29fdf61dcc",
+      "to": "88aadd3263ed6e38c89266137fd6f6d4",
+      "id": "063896f143d6834f8e2abb29fdf61dcc-->88aadd3263ed6e38c89266137fd6f6d4",
+      "label": "2",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=063896f143d6834f8e2abb29fdf61dcc, view=792bc86a109de4ecf8dc4cd5bb6b7f31(.ui.LauncherUI/LinearLayout-))",
+          "event_id": 2,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_792bc86a109de4ecf8dc4cd5bb6b7f31.png"
+        }
+      ]
+    },
+    {
+      "from": "88aadd3263ed6e38c89266137fd6f6d4",
+      "to": "063896f143d6834f8e2abb29fdf61dcc",
+      "id": "88aadd3263ed6e38c89266137fd6f6d4-->063896f143d6834f8e2abb29fdf61dcc",
+      "label": "3",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=88aadd3263ed6e38c89266137fd6f6d4, view=1e94ed98aa9343f38ff3926b0ccae6f3(.plugin.brandservice.ui.EnterpriseBizContactListUI/LinearLayout-))",
+          "event_id": 3,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_1e94ed98aa9343f38ff3926b0ccae6f3.png"
+        }
+      ]
+    }
+  ],
+  "num_nodes": 3,
+  "num_edges": 3,
+  "num_effective_events": 3,
+  "num_reached_activities": 0,
+  "test_date": "2024-11-08 13:06:11",
+  "num_transitions": 3
+}

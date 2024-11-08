@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_132709.png",
+      "label": "LauncherUI\n<FIRST>",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "description": null,
+      "font": "14px Arial red"
+    },
+    {
+      "id": "df14c09fc567b0503739ce11de3a8fb5",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_132755.png",
+      "label": "LauncherUI",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "df14c09fc567b0503739ce11de3a8fb5",
+      "description": null
+    },
+    {
+      "id": "1920891d2ee7a52ebbd1137891ea08e2",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_132840.png",
+      "label": "SettingsAliasUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.setting.ui.setting.SettingsAliasUI",
+      "state_str": "1920891d2ee7a52ebbd1137891ea08e2",
+      "description": null
+    },
+    {
+      "id": "6a9cc26aae6dd3ce0571ccf476b3b1cd",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_132927.png",
+      "label": "LauncherUI",
+      "package": "com.tencent.mm",
+      "activity": ".ui.LauncherUI",
+      "state_str": "6a9cc26aae6dd3ce0571ccf476b3b1cd",
+      "description": null
+    },
+    {
+      "id": "ffdebee30cc3feac05dc90ca76443301",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_133012.png",
+      "label": "SettingsModifyPatSuffixUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.setting.ui.setting.SettingsModifyPatSuffixUI",
+      "state_str": "ffdebee30cc3feac05dc90ca76443301",
+      "description": null
+    },
+    {
+      "id": "a6c323aa626a27b0ca0a9c167d6db8b5",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_133144.png",
+      "label": "SettingsModifyPatSuffixUI",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.setting.ui.setting.SettingsModifyPatSuffixUI",
+      "state_str": "a6c323aa626a27b0ca0a9c167d6db8b5",
+      "description": null
+    },
+    {
+      "id": "4bc8b0bd06afc5d5c61283b1962607a0",
+      "shape": "image",
+      "image": ".\\data\\com.tencent.mm\\screenshots\\screen_2024-11-08_133229.png",
+      "label": "SettingsModifyPatSuffixUI\n<LAST>",
+      "package": "com.tencent.mm",
+      "activity": ".plugin.setting.ui.setting.SettingsModifyPatSuffixUI",
+      "state_str": "4bc8b0bd06afc5d5c61283b1962607a0",
+      "description": null,
+      "font": "14px Arial red"
+    }
+  ],
+  "edges": [
+    {
+      "from": "e1b1c0f7f171ce4e01f087d2733a1185",
+      "to": "df14c09fc567b0503739ce11de3a8fb5",
+      "id": "e1b1c0f7f171ce4e01f087d2733a1185-->df14c09fc567b0503739ce11de3a8fb5",
+      "label": "1",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=e1b1c0f7f171ce4e01f087d2733a1185, view=2aeeabd20e1253976e502918a69221e4(.ui.LauncherUI/RelativeLayout-))",
+          "event_id": 1,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_2aeeabd20e1253976e502918a69221e4.png"
+        }
+      ]
+    },
+    {
+      "from": "df14c09fc567b0503739ce11de3a8fb5",
+      "to": "1920891d2ee7a52ebbd1137891ea08e2",
+      "id": "df14c09fc567b0503739ce11de3a8fb5-->1920891d2ee7a52ebbd1137891ea08e2",
+      "label": "2",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=df14c09fc567b0503739ce11de3a8fb5, view=792bc86a109de4ecf8dc4cd5bb6b7f31(.ui.LauncherUI/LinearLayout-))",
+          "event_id": 2,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_792bc86a109de4ecf8dc4cd5bb6b7f31.png"
+        }
+      ]
+    },
+    {
+      "from": "1920891d2ee7a52ebbd1137891ea08e2",
+      "to": "6a9cc26aae6dd3ce0571ccf476b3b1cd",
+      "id": "1920891d2ee7a52ebbd1137891ea08e2-->6a9cc26aae6dd3ce0571ccf476b3b1cd",
+      "label": "3",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=1920891d2ee7a52ebbd1137891ea08e2, view=1c622679bc025a41fc7e780d647e4c3d(.plugin.setting.ui.setting.SettingsAliasUI/LinearLayout-))",
+          "event_id": 3,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_1c622679bc025a41fc7e780d647e4c3d.png"
+        }
+      ]
+    },
+    {
+      "from": "6a9cc26aae6dd3ce0571ccf476b3b1cd",
+      "to": "ffdebee30cc3feac05dc90ca76443301",
+      "id": "6a9cc26aae6dd3ce0571ccf476b3b1cd-->ffdebee30cc3feac05dc90ca76443301",
+      "label": "4",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=6a9cc26aae6dd3ce0571ccf476b3b1cd, view=792bc86a109de4ecf8dc4cd5bb6b7f31(.ui.LauncherUI/LinearLayout-))",
+          "event_id": 4,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_792bc86a109de4ecf8dc4cd5bb6b7f31.png"
+        }
+      ]
+    },
+    {
+      "from": "ffdebee30cc3feac05dc90ca76443301",
+      "to": "a6c323aa626a27b0ca0a9c167d6db8b5",
+      "id": "ffdebee30cc3feac05dc90ca76443301-->a6c323aa626a27b0ca0a9c167d6db8b5",
+      "label": "5",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=ffdebee30cc3feac05dc90ca76443301, view=82712f1332e250d63f4f12579fc84db0(.plugin.setting.ui.setting.SettingsModifyPatSuffixUI/ImageButton-))",
+          "event_id": 5,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_82712f1332e250d63f4f12579fc84db0.png"
+        }
+      ]
+    },
+    {
+      "from": "a6c323aa626a27b0ca0a9c167d6db8b5",
+      "to": "4bc8b0bd06afc5d5c61283b1962607a0",
+      "id": "a6c323aa626a27b0ca0a9c167d6db8b5-->4bc8b0bd06afc5d5c61283b1962607a0",
+      "label": "6",
+      "events": [
+        {
+          "event_str": "TouchEvent(state=a6c323aa626a27b0ca0a9c167d6db8b5, view=e8725f66f3aedea33dc0372f8e2f967c(.plugin.setting.ui.setting.SettingsModifyPatSuffixUI/FrameLayout-))",
+          "event_id": 6,
+          "event_type": "touch",
+          "view_image": ".\\data\\com.tencent.mm\\views\\view_e8725f66f3aedea33dc0372f8e2f967c.png"
+        }
+      ]
+    }
+  ],
+  "num_nodes": 7,
+  "num_edges": 6,
+  "num_effective_events": 6,
+  "num_reached_activities": 0,
+  "test_date": "2024-11-08 13:26:29",
+  "num_transitions": 7
+}
